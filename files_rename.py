@@ -1,6 +1,8 @@
 import os
-yol="/media/ademk/EA003CD9003CAE87/pancar_veri/crop_image_resize/test/yabanci/"
-def ayristir(path):
+
+path="file_path"
+
+def parse(path):
     dirList=os.listdir(path)
     dirList.sort()
 
@@ -15,11 +17,13 @@ def ayristir(path):
             fnames.append(fname)
 
     return dnames,fnames
-(klasörler,dosyalar) = ayristir(yol)
-os.chdir(yol) 
+
+(files,folders) = parse(yol)
+os.chdir(path) 
+
 a=0
-for i in dosyalar:
+for i in folders:
     
-    os.rename(i,"yabanci."+str(a)+".jpg")
+    os.rename(i,"file_name."+str(a)+".jpg")
     a = a+1
 
